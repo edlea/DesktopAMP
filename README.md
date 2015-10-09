@@ -1,7 +1,8 @@
 # Accelerated Mobile Pages
 
 The [AMP Project](https://www.ampproject.org) aims to improve the experience of
-reading web content on mobile clients.
+reading web content on mobile clients, while maintaining publisher's ability to
+make money from their content (ads!).
 
 For it to succeed, it needs to be adopted by clients. We built [Something](https://something.gd)
 because we felt this very pain-point and are passionate about improving how people
@@ -12,6 +13,11 @@ read and discover content on mobile.
 There's no reason to only consume AMP enabled content on mobile. For that reason
 we've built Safari and Chrome extensions that will load AMP versions of articles
 when present.
+
+The AMP versions of articles, as well as loading faster, tend to be a lot
+cleaner and easier to read. AMP supports ads, but not JavaScript, so any ads on
+AMP articles should be a lot less obnoxious and resource intensive than is often
+the case.
 
 ## Safari
 
