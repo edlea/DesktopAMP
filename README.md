@@ -1,9 +1,9 @@
 # Accelerated Mobile Pages
 
-The [https://www.ampproject.org](AMP Project) aims to improve the experience of
+The [AMP Project](https://www.ampproject.org) aims to improve the experience of
 reading web content on mobile clients.
 
-For it to succeed, it needs to be adopted by clients. We built [https://something.gd](Something)
+For it to succeed, it needs to be adopted by clients. We built [Something](https://something.gd)
 because we felt this very pain-point and are passionate about improving how people
 read and discover content on mobile.
 
@@ -15,7 +15,9 @@ when present.
 
 ## Safari
 
+[Safari Extension](https://github.com/edlea/DesktopAMP/raw/master/amp.safariextz) that will
+redirect to the AMP version of pages when available.
+
 ## Chrome
 
-[https://chrome.google.com/webstore/detail/%E2%9A%A1%EF%B8%8F/igokgmnkplcfgnegidccbgmlnecaffhh](Chome Extension) that will check for an AMP version of pages and automatically load them
-when found.
+[Chrome Extension](https://chrome.google.com/webstore/detail/%E2%9A%A1%EF%B8%8F/igokgmnkplcfgnegidccbgmlnecaffhh) that will redirect to the AMP version of pages when available.
