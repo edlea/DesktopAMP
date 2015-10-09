@@ -1,0 +1,15 @@
+{
+  "name": "⚡️",
+  "description": "Load the AMP version of a page if available",
+  "author": "Ed Lea",
+  "version": "1.0",
+  "content_scripts": [{
+    "js": ["amp.js"],
+    "run_at": "document_end",
+    "matches": ["<all_urls>"]
+  }],
+  "manifest_version": 2,
+  "icons": { "16": "icon16.png",
+           "48": "icon48.png",
+          "128": "icon128.png" }
+}
