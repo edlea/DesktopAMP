@@ -21,3 +21,14 @@ redirect to the AMP version of pages when available.
 ## Chrome
 
 [Chrome Extension](https://chrome.google.com/webstore/detail/%E2%9A%A1%EF%B8%8F/igokgmnkplcfgnegidccbgmlnecaffhh) that will redirect to the AMP version of pages when available.
+
+# Trying it out
+
+Over time, it's expected (hoped) that lots of publishers will support AMP. For now,
+these publishers have quite a lot of their content available as AMP:
+
+* [BBC News](http://www.bbc.co.uk/news)
+* [Buzzfeed](http://www.buzzfeed.com)
+
+Visit news articles from these publishers with either the Chrome or Safari extension
+installed and enabled to view AMP versions.
