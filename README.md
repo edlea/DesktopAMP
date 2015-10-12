@@ -35,6 +35,7 @@ these publishers have quite a lot of their content available as AMP:
 
 * [BBC News](http://www.bbc.co.uk/news)
 * [Buzzfeed](http://www.buzzfeed.com)
+* [The Verge](http://www.theverge.com)
 
 Visit news articles from these publishers with either the Chrome or Safari extension
 installed and enabled to view AMP versions.
