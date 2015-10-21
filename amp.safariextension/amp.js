@@ -16,9 +16,12 @@ var observer = new MutationObserver(function(mutations) {
         style.appendChild(document.createTextNode(css));
         node.appendChild(style);
       }
+      else if (node.tagName == "BODY") {
+        observer.disconnect();
+      }
     }
   });
 });
 
-var config = { attributes: true, childList: true, subtree: true };
+var config = { childList: true, subtree: true };
 observer.observe(document.documentElement, config);
