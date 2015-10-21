@@ -5,7 +5,7 @@
   "version": "1.0",
   "content_scripts": [{
     "js": ["amp.js"],
-    "run_at": "document_end",
+    "run_at": "document_start",
     "matches": ["<all_urls>"]
   }],
   "manifest_version": 2,
