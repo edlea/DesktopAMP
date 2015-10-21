@@ -2,7 +2,7 @@
   "name": "⚡️",
   "description": "Load the AMP version of a page if available",
   "author": "Ed Lea",
-  "version": "1.0",
+  "version": "2.0",
   "content_scripts": [{
     "js": ["amp.js"],
     "run_at": "document_start",
