@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+  "name": "⚡️ Desktop AMP",
+  "description": "Load the AMP version of a page if available",
+  "version": "1.2",
+  "author": "Agustin Mendez",
+
+  "applications": {
+    "gecko": {
+      "id": "desktop-amp@matagus",
+      "strict_min_version": "42.0.0"
+    }
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "run_at": "document_start",
+      "js": ["amp.js"]
+    }
+  ],
+
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}
