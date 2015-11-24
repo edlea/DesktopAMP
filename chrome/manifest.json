@@ -1,8 +1,8 @@
 {
-  "name": "⚡️",
+  "name": "⚡️ Desktop AMP",
   "description": "Load the AMP version of a page if available",
   "author": "Ed Lea",
-  "version": "2.1",
+  "version": "2.2",
   "content_scripts": [{
     "js": ["amp.js"],
     "run_at": "document_start",
