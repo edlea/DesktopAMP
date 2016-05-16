@@ -32,7 +32,7 @@ function inspectDocNodes(node){
 
 function inspectHeadNodes(node) {
   // node.nodeType == 1 && console.log(node);
-  if (node.tagName == "LINK" && node.getAttribute('rel').toLowerCase() == 'amphtml') {
+  if (node.tagName == "LINK" && node.getAttribute('rel') && node.getAttribute('rel').toLowerCase() == 'amphtml') {
       headObserver.disconnect();
       redirect(node);
   }
