@@ -2,7 +2,7 @@
   "name": "⚡️ Desktop AMP",
   "description": "Load the AMP version of a page if available",
   "author": "Ed Lea",
-  "version": "2.2",
+  "version": "2.3",
   "content_scripts": [{
     "js": ["amp.js"],
     "run_at": "document_start",

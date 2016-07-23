@@ -5,7 +5,7 @@
 	<key>Author</key>
 	<string>Ed Lea</string>
 	<key>Builder Version</key>
-	<string>11601.1.56</string>
+	<string>11601.6.17</string>
 	<key>CFBundleDisplayName</key>
 	<string>⚡️</string>
 	<key>CFBundleIdentifier</key>
@@ -13,9 +13,9 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.2</string>
+	<string>2.3</string>
 	<key>CFBundleVersion</key>
-	<string>2.2</string>
+	<string>2.3</string>
 	<key>Content</key>
 	<dict>
 		<key>Scripts</key>
@@ -29,7 +29,7 @@
 	<key>Description</key>
 	<string>Load the AMP version of a page if available</string>
 	<key>DeveloperIdentifier</key>
-	<string>L7VLS57JHX</string>
+	<string>0000000000</string>
 	<key>ExtensionInfoDictionaryVersion</key>
 	<string>1.0</string>
 	<key>Permissions</key>
