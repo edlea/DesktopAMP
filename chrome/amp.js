@@ -1,5 +1,5 @@
 var docEl = document.documentElement;
-var isAMP = docEl.hasAttribute('amp') || docEl.hasAttribute('⚡') || docEl.hasAttribute('⚡️');
+var isAMP = docEl.hasAttribute('amp') || docEl.hasAttribute('⚡');
 var observerConfig = { childList: true, subtree: true };
 
 var documentObserver = observeNode(docEl, inspectDocNodes);
