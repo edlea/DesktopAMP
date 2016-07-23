@@ -1,5 +1,5 @@
 var docEl = document.documentElement;
-var isAMP = docEl.hasAttribute('amp') || docEl.hasAttribute('⚡️');
+var isAMP = docEl.hasAttribute('amp') || docEl.hasAttribute('⚡');
 var observerConfig = { childList: true, subtree: true };
 
 var documentObserver = observeNode(docEl, inspectDocNodes);
@@ -50,7 +50,7 @@ function redirect(node) {
 }
 
 function applyMobileCSS(node) {
-  var css = "body > * { max-width: 600px; margin: 0px auto; }";
+  var css = "body > * { max-width: 600px; margin: 0px auto !important; }";
   var style = document.createElement('style');
   style.type = 'text/css';
   style.appendChild(document.createTextNode(css));
