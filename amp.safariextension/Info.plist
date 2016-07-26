@@ -22,7 +22,7 @@
 		<dict>
 			<key>Start</key>
 			<array>
-				<string></string>
+				<string>amp.js</string>
 			</array>
 		</dict>
 	</dict>
