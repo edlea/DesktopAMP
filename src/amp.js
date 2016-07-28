@@ -31,7 +31,6 @@ function inspectDocNodes(node){
 }
 
 function inspectHeadNodes(node) {
-  // node.nodeType == 1 && console.log(node);
   if (node.tagName == "LINK" && node.getAttribute('rel').toLowerCase() == 'amphtml') {
       headObserver.disconnect();
       redirect(node);
@@ -46,7 +45,16 @@ function queryForMeta(head) {
 }
 
 function redirect(node) {
+  if (typeof chrome !== 'undefined') {
+    chrome.runtime.sendMessage({url: node.getAttribute("href")}, function(response) {
+      if (response.load) {
+        window.location = node.getAttribute("href");
+      }
+    });
+  }
+  else {
     window.location = node.getAttribute("href");
+  }
 }
 
 function applyMobileCSS(node) {

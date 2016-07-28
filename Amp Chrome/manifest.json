@@ -8,8 +8,14 @@
     "run_at": "document_start",
     "matches": ["<all_urls>"]
   }],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "permissions": [
+          "history"
+  ],
   "manifest_version": 2,
-  "icons": { "16": "icon16.png",
-           "48": "icon48.png",
-          "128": "icon128.png" }
+  "icons": { "16": "icons/Icon-16.png",
+           "48": "icons/Icon-48.png",
+          "128": "icons/Icon-128.png" }
 }

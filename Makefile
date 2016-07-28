@@ -15,7 +15,7 @@ notarget:
 chrome: clean_chrome
 	@ echo "> Copying files to Chrome extension folder..."
 	@ cp -R icons $(CHROME)/icons
-	@ cd src; cp amp.js ../$(CHROME)
+	@ cd src; cp amp.js background.js ../$(CHROME)
 	@ echo "$(GREEN)Chrome extention is ready!$(PLAIN)"
 
 safari: clean_safari
@@ -30,7 +30,7 @@ clean: clean_chrome clean_safari
 clean_chrome:
 	@ echo "> Cleaning Chrome extension folder..."
 	@ rm -fr $(CHROME)/icons
-	@ rm -f  $(CHROME)/amp.js $(CHROME)/.DS_Store
+	@ rm -f  $(CHROME)/amp.js $(CHROME)/background.js $(CHROME)/.DS_Store
 
 clean_safari:
 	@ echo "> Cleaning Safari extension folder..."
