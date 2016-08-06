@@ -28,6 +28,17 @@ redirect to the AMP version of pages when available.
 
 [Chrome Extension](https://chrome.google.com/webstore/detail/%E2%9A%A1%EF%B8%8F/igokgmnkplcfgnegidccbgmlnecaffhh) that will redirect to the AMP version of pages when available.
 
+## Building
+
+If you want to build from source, simply run
+
+```
+make
+```
+
+This will popluate the `Amp Chrome` and `Amp.safariextension` directories so you
+can install the extensions locally.
+
 # Trying it out
 
 Over time, it's expected (hoped) that lots of publishers will support AMP. For now,
