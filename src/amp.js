@@ -47,7 +47,16 @@ function queryForMeta(head) {
 }
 
 function redirect(node) {
+  if (typeof chrome !== 'undefined') {
+    chrome.runtime.sendMessage({url: node.getAttribute("href")}, function (response) {
+      if (response.load) {
+        window.location = node.getAttribute("href");
+      }
+    });
+  }
+  else {
     window.location = node.getAttribute("href");
+  }
 }
 
 function applyMobileCSS(node) {
