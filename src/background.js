@@ -11,6 +11,10 @@ chrome.runtime.onMessage.addListener(
       sendResponse({load: !(now - lastVisit[item.url] < 5000)});
     }
     else {
+      // Check for a blacklisted host
+      var link = document.createElement("a");
+      link.href = item.url;
+      //chrome.storage.load(l.hostname;
       sendResponse({load: true});
     }
   }
