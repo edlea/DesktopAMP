@@ -21,7 +21,7 @@ chrome: clean_chrome
 safari: clean_safari
 	@ echo "> Copying files to Safari extension folder..."
 	@ cp icons/* $(SAFARI)
-	@ cd src; cp amp.js ../$(SAFARI)
+	@ cd src; cp amp.js global.html ../$(SAFARI)
 	@ echo "$(GREEN)Safari extention is ready!$(PLAIN)"
 
 clean: clean_chrome clean_safari
@@ -35,4 +35,4 @@ clean_chrome:
 clean_safari:
 	@ echo "> Cleaning Safari extension folder..."
 	@ rm -f  $(SAFARI)/Icon*
-	@ rm -f  $(SAFARI)/amp.js $(SAFARI)/.DS_Store
+	@ rm -f  $(SAFARI)/amp.js $(SAFARI)/global.html $(SAFARI)/.DS_Store
