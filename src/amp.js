@@ -5,7 +5,6 @@ var observerConfig = { childList: true, subtree: true };
 var documentObserver = observeNode(docEl, inspectDocNodes);
 var headObserver;
 
-
 function observeNode(node, cb){
   var obs = new MutationObserver(function(mutations) {
     mutations.forEach(function(mutation) {
@@ -18,7 +17,7 @@ function observeNode(node, cb){
 }
 
 function inspectDocNodes(node) {
-  if (node.tagName == "BODY") addAMPToggle(node);
+  if (node.tagName == "BODY") addAMPToggle(node, true);
   if (node.tagName != "HEAD") return;
 
   if (isAMP)
@@ -52,6 +51,11 @@ function redirect(node) {
       if (response.load) {
         window.location = node.getAttribute("href");
       }
+      if (response.blacklist) {
+        document.addEventListener("DOMContentLoaded", function () {
+          addAMPToggle(document.body, false);
+        });
+      }
     });
   }
   else {
@@ -61,17 +65,23 @@ function redirect(node) {
 
 function applyMobileCSS(node) {
   var css = "body > * { max-width: 600px; margin: 0px auto !important; }";
-  css += ".DA_amp_toggle { top: 0; right: 0; position: absolute; display:table; }";
-  css += ".DA_amp_toggle > #DA_label { display: none; }";
-  css += ".DA_amp_toggle > span { font-variant: small-caps; color: #666; -webkit-filter: grayscale(1); cursor: pointer; display:table-cell; vertical-align:middle;}"
-  css += ".DA_amp_toggle > span:hover { -webkit-filter: grayscale(0); }";
   var style = document.createElement('style');
   style.type = 'text/css';
   style.appendChild(document.createTextNode(css));
   node.appendChild(style);
 }
 
-function addAMPToggle(node) {
+function addAMPToggle(node, isAMP) {
+  var css = ".DA_amp_toggle { top: 0; right: 0; position: absolute; display:table; z-index: 9999999999 }";
+  css += ".DA_amp_toggle > #DA_label { display: none; }";
+  css += ".DA_amp_toggle > span { font-variant: small-caps; color: #666; -webkit-filter: grayscale(" + (isAMP ? "1" : "0") + "); cursor: pointer; display:table-cell; vertical-align:middle;}"
+  css += ".DA_amp_toggle > span:hover { -webkit-filter: grayscale(0); }";
+  var style = document.createElement('style');
+  style.type = 'text/css';
+  style.appendChild(document.createTextNode(css));
+  document.head.appendChild(style);
+
+  // nodes
   var toggle = document.createElement('div');
   toggle.className = "DA_amp_toggle";
   var label = document.createElement('span');
@@ -80,16 +90,27 @@ function addAMPToggle(node) {
   var amp = document.createElement('span');
   amp.innerHTML = " ⚡";
   amp.onclick = blacklistPage;
+  amp.setAttribute("data-isamp", isAMP ? 1 : 0);
   toggle.appendChild(label);
   toggle.appendChild(amp);
   node.appendChild(toggle);
 }
 
 function blacklistPage () {
-  var host = location.host;
-  var blacklist = {host: true};
-  chrome.storage.local.set(blacklist, function () {
+  var setBlacklisted = this.getAttribute('data-isamp') === "1";
+  chrome.storage.local.set(blacklistHosts(setBlacklisted), function () {
     var node = document.head.querySelector('link[rel="canonical"]');
-    window.location = node.getAttribute("href");
+    window.location = node.href;
   });
+}
+
+function blacklistHosts (blacklist) {
+  var hosts = {}
+  hosts[location.hostname] = blacklist;
+  document.head.querySelectorAll('link[rel="canonical"],link[rel="amphtml"]').forEach(function (link) {
+    var a = document.createElement('a');
+    a.href = link.href;
+    hosts[a.hostname] = blacklist;
+  });
+  return hosts;
 }
