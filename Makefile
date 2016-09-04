@@ -36,3 +36,14 @@ clean_safari:
 	@ echo "> Cleaning Safari extension folder..."
 	@ rm -f  $(SAFARI)/Icon*
 	@ rm -f  $(SAFARI)/amp.js $(SAFARI)/.DS_Store
+
+release: release_safari release_chrome
+
+release_safari: safari
+	@ echo "> Building Safari release"
+
+release_chrome: chrome
+	@ echo "> Building Safari release"
+	@ rm -rf release
+	@ mkdir release
+	@ zip -r release/chrome.zip $(CHROME)/*
