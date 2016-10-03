@@ -20,7 +20,7 @@
            "48": "icons/Icon-48.png",
           "128": "icons/Icon-128.png" }
   "browser_action": {
-  "default_icon": "off.png",
-  "default_title": "icon"
+    "default_icon": "off.png",
+    "default_title": "icon"
   },
 }
