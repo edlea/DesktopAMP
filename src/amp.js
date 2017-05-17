@@ -31,7 +31,12 @@ function inspectDocNodes(node){
 }
 
 function inspectHeadNodes(node) {
-  if (node.tagName == "LINK" && node.getAttribute('rel').toLowerCase() == 'amphtml') {
+  if (node.tagName !== "LINK") return;
+
+  var rel = node.getAttribute('rel');
+  if (!rel) return;
+
+  if (rel.toLowerCase() == 'amphtml') {
       headObserver.disconnect();
       redirect(node);
   }
