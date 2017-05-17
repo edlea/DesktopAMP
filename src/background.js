@@ -15,3 +15,15 @@ chrome.runtime.onMessage.addListener(
     }
   }
 );
+var toggle = true;
+chrome.browserAction.onClicked.addListener(function(tab) {
+  toggle = !toggle;
+  if(toggle){
+    chrome.browserAction.setIcon({path: "icons/Icon-128.png", tabId:tab.id});
+    chrome.tabs.executeScript(tab.id, {file:"amp.js"});
+  }
+  else{
+    chrome.browserAction.setIcon({path: "icons/Icon-128-inactive.png", tabId:tab.id});
+    chrome.tabs.executeScript(tab.id, {code:"alert()"});
+  }
+});
